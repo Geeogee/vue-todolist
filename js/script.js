@@ -28,6 +28,25 @@ function initVue() {
             ],
 
             "newTodoText" : "",
+            "filters" : [
+                {
+                    "name" : "All",
+                    "value" : "All",
+                }, 
+
+                { 
+                    "name" : "Done",
+                    "value" : true
+                }, 
+
+                {
+                    "name" : "Undone",
+                    "value" : false
+                }
+            ],
+
+            "selected" : "All"
+        
 
         },
 
@@ -52,9 +71,37 @@ function initVue() {
                 this.todos.splice(index,1);
             },
 
-            test: function(index) {
+            checkTodoDone: function(index) {
 
                 this.todos[index].done = !this.todos[index].done
+            },
+
+            filterTodo: function() {
+
+                if (this.selected != "All") {
+                    
+                    let filterKey;
+                    this.filters.forEach(filter => {
+
+                        if(this.selected == filter.name) {
+                            filterKey = filter.value
+                        }
+                    });
+
+                    let todoCopy = [...this.todos];
+                    console.log(todoCopy, "copiato!");
+
+                    todoCopy = todoCopy.filter(todo => todo.done == filterKey);
+                    console.log(todoCopy);
+
+
+                
+                
+            
+                
+                // todoCopy = todoCopy.filter(todo => todo.done == filterKey)
+
+                } 
             }
         }
     })

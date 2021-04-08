@@ -42,7 +42,10 @@
 
                     <input type="text" v-model="newTodoText">
                     <button @click="addNewTodo">Add</button>
-
+                    <select @change="filterTodo" v-model="selected">
+                        <option v-for="(filter,index) in filters">{{ filter.name.charAt(0).toUpperCase() + filter.name.slice(1) }}</option>
+                    </select>
+                    
                 </div>
 
                 <!-- Todo bot section -->
@@ -55,7 +58,7 @@
                                 {{ todo.name }}
                             </span>
 
-                            <i @click="test(index)" :class="(!todo.done) ? 'far fa-check-circle icons' : 'fas fa-check-circle icons'"></i>
+                            <i @click="checkTodoDone(index)" :class="(!todo.done) ? 'far fa-check-circle icons' : 'fas fa-check-circle icons'"></i>
                             <i @click="removeTodo(index)" class="fas fa-times-circle icons"></i>
                         </li>
                     </ul>

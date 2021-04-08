@@ -142,5 +142,6 @@ body {
 
  .done {
     
-   color: green;
+   color: #00e165;
+   text-decoration: line-through;
  }
