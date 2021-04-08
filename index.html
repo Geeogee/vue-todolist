@@ -8,6 +8,9 @@
 
     <!-- Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700=swap" rel="stylesheet"> 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     
@@ -49,13 +52,14 @@
                         <li v-for="(todo,index) in todos">
 
                             <span class="todo-text">
-                                {{ todo }}
+                                {{ todo.name }}
                             </span>
 
-                            <i @click="removeTodo(index)" class="fas fa-times-circle"></i>
+                            <i @click="test(index)" :class="(!todo.done) ? 'far fa-check-circle icons' : 'fas fa-check-circle icons'"></i>
+                            <i @click="removeTodo(index)" class="fas fa-times-circle icons"></i>
                         </li>
                     </ul>
-                    <span v-else>There are no todo in your list!</span>
+                    <span class="empty-list-text" v-else>There are no todos in your list!</span>
 
                 </div>
 

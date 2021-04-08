@@ -13,6 +13,11 @@
     justify-content: center;
 }
 
+body {
+
+   font-family: "Lato", sans-serif;
+}
+
 /* HEADER */
  #nav-links {
     height: 100px;
@@ -42,10 +47,13 @@
 
     height: 30px;
     margin-right: 20px;
-
-    border-radius: 10px;
-    border: 2px solid #000;
     padding: 0 10px;
+    border-radius: 5px;
+    background-color: #d5dddd;
+    border: 0;
+   
+
+    
 }
 
 #new-todo-wrapper input[type="text"]:focus {
@@ -58,7 +66,13 @@
     width: 100px;
     padding: 10px 20px;
     border-radius: 10px;
-    border: 2px solid #000;
+    background-color: #00e165;
+    border: 0;
+    box-shadow: 0 2px #009945;
+
+    color: #FFF;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
  #app.todo-app-wrapper {
@@ -77,10 +91,13 @@
 
  #todo-list-wrapper {
 
-    background-color: #f5f7f7;
-    margin-top: 50px;
-    border-radius: 10px;
     width: 50%;
+
+    margin-top: 50px;
+
+    background-color: #f5f7f7;
+    border-radius: 10px;
+    color: #001533;
  }
 
  #todo-list-wrapper ul {
@@ -101,4 +118,24 @@
 
     flex-grow: 1;
  }
+
+ #todo-list-wrapper li .icons {
+
+   margin: 0 2px;
+ }
+
+ #todo-list-wrapper .empty-list-text {
+
+   width: 100%;
+   display: inline-block;
+   padding: 10px 20px;
+   text-align: center;
+   font-weight: bold;
+   font-size: 20px;
+   color: #001533;
+ }
  
+ .fa-times-circle {
+    
+   color: #001533;
+ }

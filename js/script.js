@@ -6,8 +6,28 @@ function initVue() {
 
         data: {
 
-            "todos" : [ "todo1" , "todo2", "todo3" , "todo4"],
-            "newTodoText" : ""
+            "todos" : [ 
+                {
+                    "name" : "todo1",
+                    "done" : false
+                }, 
+                {
+                    "name" : "todo2",
+                    "done" : false
+                },
+
+                { 
+                    "name" : "todo3",
+                    "done" : false
+                },
+
+                {
+                    "name" : "todo4",
+                    "done" : false
+                }
+            ],
+
+            "newTodoText" : "",
 
         },
 
@@ -17,7 +37,12 @@ function initVue() {
 
                 if (this.newTodoText.length > 0) {   
 
-                    this.todos.push(this.newTodoText);
+                    const newTodo = {
+                        "name" : this.newTodoText,
+                        "done" : false
+                    }
+
+                    this.todos.push(newTodo);
                     this.newTodoText = "";
                 }
             },
@@ -25,6 +50,11 @@ function initVue() {
             removeTodo: function(index) {
 
                 this.todos.splice(index,1);
+            },
+
+            test: function(index) {
+
+                this.todos[index].done = !this.todos[index].done
             }
         }
     })
