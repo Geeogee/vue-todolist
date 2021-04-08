@@ -90,9 +90,15 @@
  }
 
  #todo-list-wrapper li {
-
+    display: flex;
+    align-items: center;
+    
     border-bottom: 1px solid #e1e4e7;
     padding: 10px 20px;
  }
 
+ #todo-list-wrapper li .todo-text {
+
+    flex-grow: 1;
+ }
  

@@ -34,22 +34,32 @@
 
             <div id="app" class="todo-app-wrapper">
 
+                <!-- Todo top section-->
                 <div id="new-todo-wrapper">
 
-                    <input type="text">
-                    <button>Add</button>
+                    <input type="text" v-model="newTodoText">
+                    <button @click="addNewTodo">Add</button>
+
                 </div>
 
+                <!-- Todo bot section -->
                 <div id="todo-list-wrapper">
-                    <ul>
-                        <li>Uno</li>
-                        <li>Due</li>
-                        <li>Tre</li>
-                        <li>Quattro</li>
+
+                    <ul v-if="(todos.length > 0)">
+                        <li v-for="(todo,index) in todos">
+
+                            <span class="todo-text">
+                                {{ todo }}
+                            </span>
+
+                            <i @click="removeTodo(index)" class="fas fa-times-circle"></i>
+                        </li>
                     </ul>
+                    <span v-else>There are no todo in your list!</span>
+
                 </div>
 
-            </div>
+            </div> <!-- todo-app-wrapper end -->
 
         </div>
     </main>
