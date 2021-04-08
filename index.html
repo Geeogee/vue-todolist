@@ -18,10 +18,41 @@
 </head>
 <body>
 
+    <header>
 
-    <div id="app">
+        <nav id="nav-links">
+            <a href="#">
+                <img id="logo" src="img/logo.png">
+            </a>
+        </nav>
 
-        {{ test }}
-    </div>
+    </header>
+
+    <main>
+
+        <div class="container">
+
+            <div id="app" class="todo-app-wrapper">
+
+                <div id="new-todo-wrapper">
+
+                    <input type="text">
+                    <button>Add</button>
+                </div>
+
+                <div id="todo-list-wrapper">
+                    <ul>
+                        <li>Uno</li>
+                        <li>Due</li>
+                        <li>Tre</li>
+                        <li>Quattro</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+    
 </body>
 </html>
