@@ -76,7 +76,7 @@ function initVue() {
                 this.todos[index].done = !this.todos[index].done
             },
 
-            filterTodo: function() {
+            filterTodo: function(todos) {
 
                 if (this.selected != "All") {
                     
@@ -92,16 +92,12 @@ function initVue() {
                     console.log(todoCopy, "copiato!");
 
                     todoCopy = todoCopy.filter(todo => todo.done == filterKey);
-                    console.log(todoCopy);
+                    return todoCopy
+                } else {
 
-
-                
-                
-            
-                
-                // todoCopy = todoCopy.filter(todo => todo.done == filterKey)
-
-                } 
+                    console.log(this.todos)
+                    return this.todos
+                }
             }
         }
     })

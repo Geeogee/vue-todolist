@@ -52,7 +52,7 @@
                 <div id="todo-list-wrapper">
 
                     <ul v-if="(todos.length > 0)">
-                        <li v-for="(todo,index) in todos">
+                        <li v-for="(todo,index) in filterTodo(todos)">
 
                             <span class="todo-text" :class="(todo.done) ? 'done' : ''">
                                 {{ todo.name }}
